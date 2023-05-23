@@ -24,3 +24,15 @@ jobs:
           echo "RELEASE_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
       - name: Build tagged Docker image
         run: docker build . -t miragon/camunda-7-plain:${{ env.RELEASE_VERSION }}
+      - name: Scan image
+        id: scan
+        uses: anchore/scan-action@v3
+        with:
+          image: miragon/camunda-7-plain:${{ env.RELEASE_VERSION }}
+          fail-build: false
+          debug: false
+          acs-report-enable: true #GitHub Automated Code Scanning (ACS)
+      - name: Parse SARIF file
+        uses: FlowSquad/sarif-report-parse@v1.0.2
+        with:
+          sarif-file: ${{ steps.scan.outputs.sarif }}

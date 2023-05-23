@@ -7,7 +7,7 @@
     <groupId>io.miragon</groupId>
     <artifactId>camunda-7-plain</artifactId>
     <name>camunda-7-plain</name>
-    <version>0.1</version>
+    <version>0.1.1</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -21,6 +21,7 @@
         <java.version>17</java.version>
         <camunda.version>7.19.0</camunda.version>
         <camunda.spring.boot.starter.version>7.19.0</camunda.spring.boot.starter.version>
+        <hsqldb.version>2.7.1</hsqldb.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -53,8 +54,15 @@
         </dependency>
 
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>${hsqldb.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>2.0</version>
         </dependency>
 
     </dependencies>
