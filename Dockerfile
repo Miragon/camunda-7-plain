@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-alpine
+FROM amazoncorretto:17-alpine3.16
 
 EXPOSE 8080
 
