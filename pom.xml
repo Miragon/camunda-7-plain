@@ -7,7 +7,7 @@
     <groupId>io.miragon</groupId>
     <artifactId>camunda-7-plain</artifactId>
     <name>camunda-7-plain</name>
-    <version>0.1</version>
+    <version>0.1.1</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
